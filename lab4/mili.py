@@ -1,7 +1,4 @@
 import datetime
 
-dt = datetime.datetime.today().replace(microsecond=0)
-
-print()
-print(dt)
-print()
+ms = datetime.datetime.today().replace(microsecond=0)
+print(ms)
