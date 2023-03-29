@@ -1,3 +1,3 @@
 import math
-a = 15
+a = input()
 print(math.radians(a))
