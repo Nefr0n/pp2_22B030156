@@ -1,42 +1,34 @@
-import pygame, sys
+import pygame
 from datetime import datetime
 import math
-
-
-
-
-
 def main():
-
-    # pygame initialization
     pygame.init()
+
     screen = pygame.display.set_mode((800, 600))
     clock = pygame.time.Clock()
-    
-    # get the current time
+
     curr_time = datetime.now()
     curr_sec = curr_time.second
     curr_min = curr_time.minute
 
+    clock_image = pygame.transform.scale(pygame.image.load('images/mickeyclock.jpg'), (800, 600))
 
-    # loading the images 
-    clock_image = pygame.transform.scale(pygame.image.load('./images/mickeyclock.jpeg'), (800, 600))
-    sechand_image = pygame.image.load('./images/sechand.png')
+    sechand_image = pygame.image.load('images/right-hand.png')
     sechand_image = pygame.transform.scale(sechand_image, (250, 75))
     sechand_rect = sechand_image.get_rect()
     sechand_rect.center = (400, 300)
-    minhand_image = pygame.image.load('./images/minhand.png')
+
+    minhand_image = pygame.image.load('images/left-hand.png')
     minhand_image = pygame.transform.scale(minhand_image, (200, 50))
     minhand_rect = minhand_image.get_rect()
     minhand_rect.center = (400, 300)
 
-
-
+    
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                sys.quit()
+                quit()
         screen.fill(0)
         screen.blit(clock_image, (0, 0))
     
