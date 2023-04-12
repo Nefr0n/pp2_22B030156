@@ -1,8 +1,9 @@
-import pygame, sys, random
+import pygame
+import sys
+import random
 from pygame.math import Vector2
 from pygame import Rect
 import time
-import numpy as np
 
 
 fps = 60
@@ -18,7 +19,7 @@ level = 1
 # Class inherited from Sprite for Fruit object
 class Fruit(pygame.sprite.Sprite):
     def __init__(self):
-        super().__init__()
+        super(self, super).__init__()
         self.randomize()
 
     # drawing fruit
@@ -174,8 +175,6 @@ class GameLogic:
     def __init__(self):
         self.snake = Snake()
         self.fruit = Fruit()
-        self.map = np.ones((col_number, row_number))
-        self.map[1:-1, 1:-1] = np.random.choice([0, 1], size = (col_number-2, row_number-2), p=[(100 - 5 * level)/100, level * 5/100])
         self.walls_list = []
 
 

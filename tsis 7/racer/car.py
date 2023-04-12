@@ -15,7 +15,7 @@ def main():
     y_pos = 50
     
     while True:
-        for event in pygame.event.get((KEYDOWN)):
+        for event in pygame.event.get():
             match event.type:
                 case pygame.QUIT:
                     pygame.exit()
@@ -47,13 +47,6 @@ def main():
         pygame.draw.circle(screen, (255, 0, 0), (x_pos, y_pos), 25)
         pygame.display.flip()
         clock.tick(60)
-
-
-
-                    
-
-
-
 
 if __name__ == "__main__":
     main()
